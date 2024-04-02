@@ -1,0 +1,120 @@
+///// CREATE TABLES AND FILL IT ///////
+
+
+USE testdb;
+
+drop table if exists users;
+drop table if exists products;
+
+create table if not exists users (
+id int primary key auto_increment,
+name varchar(255),
+email varchar(255),
+age int
+);
+
+create table if not exists products (
+id int primary key auto_increment,
+description text,
+price decimal(10, 2)
+);
+
+
+insert into users(name, email, age) values
+('Bogdanle', "bogdan@gmail.com", 25),
+('Maks', "maks@gmail.com", 28),
+('Dimon', "dimon@gmail.com", 15),
+('Arturle', "artur@gmail.com", 16),
+('Denys', "danylo@gmail.com", 16);
+
+
+insert into products(id, description, price) values
+(1, "MaksAPPLE", 100.32),
+(2, null, 60.62),
+(3, "Arturro", 150.23);
+
+
+
+
+
+
+
+/////// USERS ///////
+
+use testdb;
+
+select * from users;
+
+-- UPDATE users
+-- SET email='jura@gmail.com'
+-- WHERE id=1
+
+
+-- DELETE FROM users
+-- WHERE id=3
+
+
+-- select * from users
+-- where age < 20
+
+
+-- select * from users
+-- order by name
+
+
+-- SELECT * FROM users 
+-- WHERE name LIKE '%le'
+
+
+-- SELECT * FROM users 
+-- WHERE 20 <= age AND age <= 30
+
+
+-- SELECT * FROM users 
+-- WHERE id = 1 OR id = 2 OR id = 3
+
+
+
+
+
+
+/////// PRODUCTS ////////
+
+
+use testdb;
+
+-- select * from products
+-- where price > 100;
+
+
+-- select id, description from products
+
+-- select * from products;
+-- UPDATE products
+-- SET description='new Human'
+-- WHERE id=2
+
+-- select * from products;
+-- DELETE FROM products
+-- WHERE id=1
+
+
+-- SELECT * FROM products 
+-- WHERE description LIKE '%apple%'
+
+
+-- SELECT * FROM products 
+-- ORDER BY price
+
+
+-- SELECT * FROM products
+-- WHERE description LIKE '%ro%'
+
+-- SELECT * FROM products
+-- WHERE description LIKE 'This%'
+
+-- SELECT * FROM products
+-- WHERE description IS NULL
+
+
+
